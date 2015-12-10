@@ -14,5 +14,13 @@ app.factory('Auth', function($http){
 			console.log(response);
 		})
 	}
+
+	Auth.logout = function() {
+		console.log("Logging you out.");
+		$http.get('/auth/logout')
+		.then(function(response){
+			console.log(response);
+		})
+	}
 	return Auth;
 })

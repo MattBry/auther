@@ -9,8 +9,8 @@ app.use(session({
 }));
 
 app.use(function (req, res, next) {
-  if (!req.session.counter) req.session.counter = 0;
-  console.log('counter', ++req.session.counter);
+	console.log("the user's id is:")
+  console.log(req.session.userId);
   next();
 });
 
