@@ -2,6 +2,17 @@
 
 var app = require('express')();
 var path = require('path');
+var session = require('express-session')
+
+app.use(session({
+	secret: 'twoBees'
+}));
+
+app.use(function (req, res, next) {
+  if (!req.session.counter) req.session.counter = 0;
+  console.log('counter', ++req.session.counter);
+  next();
+});
 
 app.use(require('./logging.middleware'));
 
@@ -19,6 +30,8 @@ validFrontendRoutes.forEach(function (stateRoute) {
 		res.sendFile(indexPath);
 	});
 });
+
+
 
 app.use(require('./error.middleware'));
 

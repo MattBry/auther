@@ -4,11 +4,10 @@ var router = require('express').Router();
 var User = require('../api/users/user.model');
 
 router.post('/', function (req, res, next) {
-	console.log(req.body);
+	console.log(req.session);
 	User.findOne(req.body)
 	.exec()
 	.then(function(foundUser){
-		console.log(foundUser);
 		if (foundUser){
 		res.status(200).json(foundUser);
 		}
