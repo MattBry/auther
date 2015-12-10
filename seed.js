@@ -70,7 +70,7 @@ function generateAll () {
 	}));
 	users.push(new User({
 		name: 'Omri Bernstein',
-		photo: 'http://i.zemanta.com/278070129_80_80.jpg',
+		photo: 'http://www.fillmurray.com/100/100',
 		phone: '(781) 854-8854',
 		email: 'omri@zeke.zeke',
 		password: '123'
