@@ -1,8 +1,8 @@
 app.factory('Auth', function($http){
 	var Auth = {};
 
-	Auth.signup = function(email, password){
-		$http.post('/auth/signup', { password: password, email: email })
+	Auth.signup = function(payload){
+		$http.post('/auth/signup', payload)
 		.then(function(response){
 			console.log(response);
 		})

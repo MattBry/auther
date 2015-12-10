@@ -1,3 +1,5 @@
 app.controller('Signup', function($scope, Auth){
-	$scope.signup = Auth.signup;
+	$scope.signup = function(){
+		Auth.signup({email: $scope.email, password: $scope.password});
+	}
 })
